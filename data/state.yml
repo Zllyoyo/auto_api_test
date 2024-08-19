@@ -1,0 +1,6 @@
+url: state
+method: GET
+headers:
+  Content-Type: application/json
+param:
+  username:

@@ -1,0 +1,8 @@
+url: login
+method: POST
+headers:
+  Content-Type: application/json
+param:
+  username:
+  password: 'wrf19980122'
+  password2:

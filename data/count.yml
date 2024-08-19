@@ -1,0 +1,6 @@
+url: count
+method: GET
+headers:
+  Content-Type: application/json
+param:
+  username:

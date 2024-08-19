@@ -1,0 +1,9 @@
+env:
+  host: http://121.36.194.128:8000/
+
+dataBase:
+  host: 121.36.194.128
+  port: 3306
+  username: root
+  password: 123456
+  basename: forApiTest

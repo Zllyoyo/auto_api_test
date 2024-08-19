@@ -1,0 +1,10 @@
+url: register
+method: POST
+headers:
+  Content-Type: application/json
+param:
+  username:
+  password:
+  password2:
+  mobile: '13368036672'
+  allow: '1'
