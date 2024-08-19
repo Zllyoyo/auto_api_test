@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert False\n +  where False = <function Assert.asert_contrast at 0x000001A856FD5D30>(data='{\"errmsg\": \"&case_001.errmsg&\"}', result_code=200, result_data='{\"code\": 400, \"errmsg\": \"登录失败，账号或密码错误\"}')\n +    where <function Assert.asert_contrast at 0x000001A856FD5D30> = Assert.asert_contrast\n +    and   '{\"errmsg\": \"&case_001.errmsg&\"}' = handleExcelJson('{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}')\n +      where '{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}' = str('{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}')\n +    and   200 = <Response [200]>.status_code\n +    and   '{\"code\": 400, \"errmsg\": \"登录失败，账号或密码错误\"}' = dictToString({'code': 400, 'errmsg': '登录失败，账号或密码错误'})\n +      where {'code': 400, 'errmsg': '登录失败，账号或密码错误'} = <bound method Response.json of <Response [200]>>()\n +        where <bound method Response.json of <Response [200]>> = <Response [200]>.json",
+      "children" : [ {
+        "name" : "test_1[data1]",
+        "uid" : "a8fa8437e4e6cdb1",
+        "parentUid" : "b6a90750f5e24889d9fb3907fa3aaa1c",
+        "status" : "failed",
+        "time" : {
+          "start" : 1724058989483,
+          "stop" : 1724058989934,
+          "duration" : 451
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_002', '登录', '登录用户', 'POST', 'login', '{\"username\": \"&case_001.code&\", \"password\": \"&case_001.code&\", \"password2\": \"@select username from tb_users where id = 11@\"}', '{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}', 'N']" ]
+      } ],
+      "uid" : "b6a90750f5e24889d9fb3907fa3aaa1c"
+    }, {
+      "name" : "AssertionError: assert False\n +  where False = <function Assert.asert_contrast at 0x000001A856FD5D30>(data='{\"count\": \"@select username from tb_users where id = 11@\", \"errmsg\": \"ok\"}', result_code=200, result_data='{\"code\": 200, \"count\": 1, \"errmsg\": \"ok\"}')\n +    where <function Assert.asert_contrast at 0x000001A856FD5D30> = Assert.asert_contrast\n +    and   '{\"count\": \"@select username from tb_users where id = 11@\", \"errmsg\": \"ok\"}' = handleExcelJson('{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}')\n +      where '{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}' = str('{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}')\n +    and   200 = <Response [200]>.status_code\n +    and   '{\"code\": 200, \"count\": 1, \"errmsg\": \"ok\"}' = dictToString({'code': 200, 'count': 1, 'errmsg': 'ok'})\n +      where {'code': 200, 'count': 1, 'errmsg': 'ok'} = <bound method Response.json of <Response [200]>>()\n +        where <bound method Response.json of <Response [200]>> = <Response [200]>.json",
+      "children" : [ {
+        "name" : "test_1[data2]",
+        "uid" : "237542aa6465eecc",
+        "parentUid" : "737ebbd6f63194226f343cacfb31fefe",
+        "status" : "failed",
+        "time" : {
+          "start" : 1724058990075,
+          "stop" : 1724058990828,
+          "duration" : 753
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_003', '查询用户', '查询是否存在用户', 'GET', 'count', '{\"username\": \"@select username from tb_users where id = 11@\"}', '{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}', 'N']" ]
+      } ],
+      "uid" : "737ebbd6f63194226f343cacfb31fefe"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

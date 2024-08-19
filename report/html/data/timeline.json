@@ -1,0 +1,65 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-G38TPIG",
+    "children" : [ {
+      "name" : "22040-MainThread",
+      "children" : [ {
+        "name" : "test_1[data2]",
+        "uid" : "237542aa6465eecc",
+        "parentUid" : "1fd0cc74954f02aa53f39f933c6d14f2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1724058990075,
+          "stop" : 1724058990828,
+          "duration" : 753
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_003', '查询用户', '查询是否存在用户', 'GET', 'count', '{\"username\": \"@select username from tb_users where id = 11@\"}', '{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}', 'N']" ]
+      }, {
+        "name" : "test_1[data3]",
+        "uid" : "d589f77f5ecc053a",
+        "parentUid" : "1fd0cc74954f02aa53f39f933c6d14f2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724058990836,
+          "stop" : 1724058991161,
+          "duration" : 325
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_004', '查询状态', '查询指定用户登录状态', 'GET', 'state', '{\"username\": \"wrfwrf\"}', '{\\n    \"code\": 200,\\n    \"errmsg\": \"用户在线\"\\n}', 'N']" ]
+      }, {
+        "name" : "test_1[data1]",
+        "uid" : "a8fa8437e4e6cdb1",
+        "parentUid" : "1fd0cc74954f02aa53f39f933c6d14f2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1724058989483,
+          "stop" : 1724058989934,
+          "duration" : 451
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_002', '登录', '登录用户', 'POST', 'login', '{\"username\": \"&case_001.code&\", \"password\": \"&case_001.code&\", \"password2\": \"@select username from tb_users where id = 11@\"}', '{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}', 'N']" ]
+      }, {
+        "name" : "test_1[data0]",
+        "uid" : "7d43019351d20b3d",
+        "parentUid" : "1fd0cc74954f02aa53f39f933c6d14f2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1724058989013,
+          "stop" : 1724058989473,
+          "duration" : 460
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "['case_001', '注册', '注册用户', 'POST', 'register', '{\"username\": \"wrffff\", \"password\": \"wrf19980122\", \"password2\": \"wrf19980122\", \"mobile\": \"13368036672\", \"allow\": \"1\"}', '{\"code\": \"@select id from tb_users where username = \\'wrfwrf\\'@\",\\n\"errmsg\": \"用户名已存在\"}', 'Y']" ]
+      } ],
+      "uid" : "1fd0cc74954f02aa53f39f933c6d14f2"
+    } ],
+    "uid" : "52fede90db6556e7c0b2b74b909f7584"
+  } ]
+}

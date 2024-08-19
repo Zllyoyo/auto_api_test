@@ -1,0 +1,80 @@
+{
+  "f31b606fbfa8704f91eb71af5c5dc78e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7d43019351d20b3d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1724058989013,
+        "stop" : 1724058989473,
+        "duration" : 460
+      }
+    } ]
+  },
+  "de75972b7dcdfb23b84303ef589640a2" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "237542aa6465eecc",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False\n +  where False = <function Assert.asert_contrast at 0x000001A856FD5D30>(data='{\"count\": \"@select username from tb_users where id = 11@\", \"errmsg\": \"ok\"}', result_code=200, result_data='{\"code\": 200, \"count\": 1, \"errmsg\": \"ok\"}')\n +    where <function Assert.asert_contrast at 0x000001A856FD5D30> = Assert.asert_contrast\n +    and   '{\"count\": \"@select username from tb_users where id = 11@\", \"errmsg\": \"ok\"}' = handleExcelJson('{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}')\n +      where '{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}' = str('{\\n    \"count\": \"@select username from tb_users where id = 11@\",\\n    \"errmsg\": \"ok\"\\n}')\n +    and   200 = <Response [200]>.status_code\n +    and   '{\"code\": 200, \"count\": 1, \"errmsg\": \"ok\"}' = dictToString({'code': 200, 'count': 1, 'errmsg': 'ok'})\n +      where {'code': 200, 'count': 1, 'errmsg': 'ok'} = <bound method Response.json of <Response [200]>>()\n +        where <bound method Response.json of <Response [200]>> = <Response [200]>.json",
+      "time" : {
+        "start" : 1724058990075,
+        "stop" : 1724058990828,
+        "duration" : 753
+      }
+    } ]
+  },
+  "0c0ce39de18c03095f0f8e879d4a89ae" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a8fa8437e4e6cdb1",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False\n +  where False = <function Assert.asert_contrast at 0x000001A856FD5D30>(data='{\"errmsg\": \"&case_001.errmsg&\"}', result_code=200, result_data='{\"code\": 400, \"errmsg\": \"登录失败，账号或密码错误\"}')\n +    where <function Assert.asert_contrast at 0x000001A856FD5D30> = Assert.asert_contrast\n +    and   '{\"errmsg\": \"&case_001.errmsg&\"}' = handleExcelJson('{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}')\n +      where '{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}' = str('{\\n    \"errmsg\": \"&case_001.errmsg&\"\\n}')\n +    and   200 = <Response [200]>.status_code\n +    and   '{\"code\": 400, \"errmsg\": \"登录失败，账号或密码错误\"}' = dictToString({'code': 400, 'errmsg': '登录失败，账号或密码错误'})\n +      where {'code': 400, 'errmsg': '登录失败，账号或密码错误'} = <bound method Response.json of <Response [200]>>()\n +        where <bound method Response.json of <Response [200]>> = <Response [200]>.json",
+      "time" : {
+        "start" : 1724058989483,
+        "stop" : 1724058989934,
+        "duration" : 451
+      }
+    } ]
+  },
+  "2d9fd8eb5d3dd11abcb1dfb993858b46" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d589f77f5ecc053a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1724058990836,
+        "stop" : 1724058991161,
+        "duration" : 325
+      }
+    } ]
+  }
+}

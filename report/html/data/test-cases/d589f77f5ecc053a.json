@@ -1,0 +1,126 @@
+{
+  "uid" : "d589f77f5ecc053a",
+  "name" : "test_1[data3]",
+  "fullName" : "test_case.test_demo.TestClass#test_1",
+  "historyId" : "2d9fd8eb5d3dd11abcb1dfb993858b46",
+  "time" : {
+    "start" : 1724058990836,
+    "stop" : 1724058991161,
+    "duration" : 325
+  },
+  "description" : "编写测试用例",
+  "descriptionHtml" : "<p>编写测试用例</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1724058988914,
+      "stop" : 1724058989011,
+      "duration" : 97
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_class_fixture_TestClass",
+    "time" : {
+      "start" : 1724058989011,
+      "stop" : 1724058989011,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "编写测试用例",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "c0071c81cfd2f7c7",
+      "name" : "log",
+      "source" : "c0071c81cfd2f7c7.txt",
+      "type" : "text/plain",
+      "size" : 996
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_class_fixture_TestClass::0",
+    "time" : {
+      "start" : 1724058991162,
+      "stop" : 1724058991162,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case"
+  }, {
+    "name" : "suite",
+    "value" : "test_demo"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestClass"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G38TPIG"
+  }, {
+    "name" : "thread",
+    "value" : "22040-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_demo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "data",
+    "value" : "['case_004', '查询状态', '查询指定用户登录状态', 'GET', 'state', '{\"username\": \"wrfwrf\"}', '{\\n    \"code\": 200,\\n    \"errmsg\": \"用户在线\"\\n}', 'N']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "smoke" ]
+  },
+  "source" : "d589f77f5ecc053a.json",
+  "parameterValues" : [ "['case_004', '查询状态', '查询指定用户登录状态', 'GET', 'state', '{\"username\": \"wrfwrf\"}', '{\\n    \"code\": 200,\\n    \"errmsg\": \"用户在线\"\\n}', 'N']" ]
+}

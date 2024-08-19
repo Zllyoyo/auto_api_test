@@ -1,0 +1,42 @@
+2024-08-19 17:16:28 - root - INFO - 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+2024-08-19 17:16:28 - root - INFO - 读取的excel文件数据：
+[['case_001', '注册', '注册用户', 'register', '{\n    "username":"wrffff",\n    "password":"wrf19980122",\n    "password2":"wrf19980122"\n}', '{"code": "@select id from tb_users where username = \'wrfwrf\'@",\n"errmsg": "用户名已存在"}', 'Y'], ['case_002', '登录', '登录用户', 'login', '{"username": "&case_001.code&",\n"password": "&case_001.code&",\n"password2": "@select username from tb_users where id = 11@"}', '{\n    "errmsg": "&case_001.errmsg&"\n}', 'N'], ['case_003', '查询用户', '查询是否存在用户', 'count', '{"username":"@select username from tb_users where id = 11@"}', '{\n    "count": "@select username from tb_users where id = 11@",\n    "errmsg": "ok"\n}', 'N'], ['case_004', '查询状态', '查询指定用户登录状态', 'state', '{"username":"wrfwrf"}', '{\n    "code": 200,\n    "errmsg": "用户在线"\n}', 'N']]
+2024-08-19 17:16:28 - root - INFO - 读取的excel文件数据：
+[['case_001', '注册', '注册用户', 'register', '{\n    "username":"wrffff",\n    "password":"wrf19980122",\n    "password2":"wrf19980122"\n}', '{"code": "@select id from tb_users where username = \'wrfwrf\'@",\n"errmsg": "用户名已存在"}', 'Y'], ['case_002', '登录', '登录用户', 'login', '{"username": "&case_001.code&",\n"password": "&case_001.code&",\n"password2": "@select username from tb_users where id = 11@"}', '{\n    "errmsg": "&case_001.errmsg&"\n}', 'N'], ['case_003', '查询用户', '查询是否存在用户', 'count', '{"username":"@select username from tb_users where id = 11@"}', '{\n    "count": "@select username from tb_users where id = 11@",\n    "errmsg": "ok"\n}', 'N'], ['case_004', '查询状态', '查询指定用户登录状态', 'state', '{"username":"wrfwrf"}', '{\n    "code": 200,\n    "errmsg": "用户在线"\n}', 'N']]
+2024-08-19 17:16:28 - root - INFO - 读取的yaml文件数据：
+{'url': 'register', 'method': 'POST', 'headers': {'Content-Type': 'application/json'}, 'param': {'username': None, 'password': None, 'password2': None, 'mobile': '13368036672', 'allow': '1'}}
+2024-08-19 17:16:28 - root - INFO - 读取的yaml文件数据：
+{'url': 'login', 'method': 'POST', 'headers': {'Content-Type': 'application/json'}, 'param': {'username': None, 'password': 'wrf19980122', 'password2': None}}
+2024-08-19 17:16:28 - root - INFO - 读取的yaml文件数据：
+{'url': 'count', 'method': 'GET', 'headers': {'Content-Type': 'application/json'}, 'param': {'username': None}}
+2024-08-19 17:16:28 - root - INFO - 读取的yaml文件数据：
+{'url': 'state', 'method': 'GET', 'headers': {'Content-Type': 'application/json'}, 'param': {'username': None}}
+2024-08-19 17:16:29 - root - INFO - 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+2024-08-19 17:16:29 - root - INFO - 请求参数是：{"username": "wrffff", "password": "wrf19980122", "password2": "wrf19980122", "mobile": "13368036672", "allow": "1"}
+2024-08-19 17:16:29 - root - INFO - 响应数据是：{'code': 11, 'errmsg': '用户名已存在'}
+2024-08-19 17:16:29 - root - INFO - 进行验证data：
+预期返回：{"code": "@select id from tb_users where username = 'wrfwrf'@", "errmsg": "用户名已存在"}			实际返回：{"code": 11, "errmsg": "用户名已存在"}
+2024-08-19 17:16:29 - root - INFO - 验证通过
+2024-08-19 17:16:29 - root - INFO - 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+2024-08-19 17:16:29 - root - INFO - 请求参数是：{"username": "11", "password": "11", "password2": "wrfwrf"}
+2024-08-19 17:16:29 - root - INFO - 响应数据是：{'code': 400, 'errmsg': '登录失败，账号或密码错误'}
+2024-08-19 17:16:29 - root - INFO - 进行验证data：
+预期返回：{"errmsg": "&case_001.errmsg&"}			实际返回：{"code": 400, "errmsg": "登录失败，账号或密码错误"}
+2024-08-19 17:16:29 - root - WARNING - 断言失败：
+2024-08-19 17:16:30 - root - INFO - 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+2024-08-19 17:16:30 - root - INFO - 请求参数是：http://121.36.194.128:8000/count/?username=wrfwrf
+2024-08-19 17:16:30 - root - INFO - 响应数据是：{'code': 200, 'count': 1, 'errmsg': 'ok'}
+2024-08-19 17:16:30 - root - INFO - 进行验证data：
+预期返回：{"count": "@select username from tb_users where id = 11@", "errmsg": "ok"}			实际返回：{"code": 200, "count": 1, "errmsg": "ok"}
+2024-08-19 17:16:30 - root - WARNING - 断言失败：
+2024-08-19 17:16:30 - root - INFO - 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+2024-08-19 17:16:31 - root - INFO - 请求参数是：http://121.36.194.128:8000/state/?username=wrfwrf
+2024-08-19 17:16:31 - root - INFO - 响应数据是：{'code': 200, 'errmsg': '用户在线'}
+2024-08-19 17:16:31 - root - INFO - 进行验证data：
+预期返回：{"code": 200, "errmsg": "用户在线"}			实际返回：{"code": 200, "errmsg": "用户在线"}
+2024-08-19 17:16:31 - root - INFO - 验证通过

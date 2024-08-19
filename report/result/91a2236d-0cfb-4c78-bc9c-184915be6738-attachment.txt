@@ -1,0 +1,9 @@
+INFO     root:read_data.py:23 读取的yaml文件数据：
+{'env': {'host': 'http://121.36.194.128:8000/'}, 'dataBase': {'host': '121.36.194.128', 'port': 3306, 'username': 'root', 'password': 123456, 'basename': 'forApiTest'}}
+DEBUG    urllib3.connectionpool:connectionpool.py:227 Starting new HTTP connection (1): 121.36.194.128:8000
+DEBUG    urllib3.connectionpool:connectionpool.py:452 http://121.36.194.128:8000 "POST /login/ HTTP/1.1" 200 99
+INFO     root:api_requests.py:63 请求参数是：{"username": "11", "password": "11", "password2": "wrfwrf"}
+INFO     root:api_requests.py:64 响应数据是：{'code': 400, 'errmsg': '登录失败，账号或密码错误'}
+INFO     root:assert_contrast.py:21 进行验证data：
+预期返回：{"errmsg": "&case_001.errmsg&"}			实际返回：{"code": 400, "errmsg": "登录失败，账号或密码错误"}
+WARNING  root:assert_contrast.py:52 断言失败：

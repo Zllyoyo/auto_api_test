@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="4" time="2.738" timestamp="2024-08-19T17:16:28.426751" hostname="DESKTOP-G38TPIG"><testcase classname="test_case.test_demo.TestClass" name="test_1[data0]" time="0.560" /><testcase classname="test_case.test_demo.TestClass" name="test_1[data1]" time="0.453"><failure message="assert False&#10; +  where False = &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt;(data='{&quot;errmsg&quot;: &quot;&amp;case_001.errmsg&amp;&quot;}', result_code=200, result_data='{&quot;code&quot;: 400, &quot;errmsg&quot;: &quot;登录失败，账号或密码错误&quot;}')&#10; +    where &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt; = Assert.asert_contrast&#10; +    and   '{&quot;errmsg&quot;: &quot;&amp;case_001.errmsg&amp;&quot;}' = handleExcelJson('{\n    &quot;errmsg&quot;: &quot;&amp;case_001.errmsg&amp;&quot;\n}')&#10; +      where '{\n    &quot;errmsg&quot;: &quot;&amp;case_001.errmsg&amp;&quot;\n}' = str('{\n    &quot;errmsg&quot;: &quot;&amp;case_001.errmsg&amp;&quot;\n}')&#10; +    and   200 = &lt;Response [200]&gt;.status_code&#10; +    and   '{&quot;code&quot;: 400, &quot;errmsg&quot;: &quot;登录失败，账号或密码错误&quot;}' = dictToString({'code': 400, 'errmsg': '登录失败，账号或密码错误'})&#10; +      where {'code': 400, 'errmsg': '登录失败，账号或密码错误'} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;()&#10; +        where &lt;bound method Response.json of &lt;Response [200]&gt;&gt; = &lt;Response [200]&gt;.json">self = &lt;test_case.test_demo.TestClass object at 0x000001A85702AD90&gt;
+data = ['case_002', '登录', '登录用户', 'POST', 'login', '{"username": "11", "password": "11", "password2": "wrfwrf"}', ...]
+
+    @pytest.mark.smoke
+    @pytest.mark.parametrize("data", execute_data)
+    def test_1(self, data):
+        """编写测试用例"""
+        if data[3] == 'GET':
+            jsondict = getDict(data[5])
+            for key, value in jsondict.items():
+                if match_param(str(value)):
+                    a, b = match_param(str(value))
+                    jsondict[key] = str(extract_with_jsonpath(
+                        global_instance.res_save_dict[a], b))
+                if match_sql(value):
+                    c = match_sql(value)
+                    jsondict[key] = OperationDb().query(c)
+                json_str = json.dumps(jsondict)
+                data[5] = json_str
+            res = ApiRequest.send_requests(
+                method=data[3], url=data[4], params=data[5])
+            # print(res.status_code)
+            if data[7] == 'Y':
+                global_instance.res_save_dict[data[0]] = dictToString(
+                    res.json())
+            assert Assert.asert_contrast(
+                data=handleExcelJson(str(
+                    data[6])),
+                result_code=res.status_code,
+                result_data=dictToString(res.json()))
+        else:
+            jsondict = getDict(data[5])
+            for key, value in jsondict.items():
+                if match_param(str(value)):
+                    a, b = match_param(str(value))
+                    jsondict[key] = str(extract_with_jsonpath(
+                        global_instance.res_save_dict[a], b))
+                if match_sql(value):
+                    c = match_sql(value)
+                    jsondict[key] = OperationDb().query(c)
+                json_str = json.dumps(jsondict)
+                data[5] = json_str
+            res = ApiRequest.send_requests(
+                method=data[3], url=data[4], data=data[5])
+            if data[7] == 'Y':
+                global_instance.res_save_dict[data[0]] = dictToString(
+                    res.json())
+            # print(res.status_code)
+&gt;           assert Assert.asert_contrast(
+                data=handleExcelJson(str(
+                    data[6])),
+                result_code=res.status_code,
+                result_data=dictToString(res.json()))
+E           assert False
+E            +  where False = &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt;(data='{"errmsg": "&amp;case_001.errmsg&amp;"}', result_code=200, result_data='{"code": 400, "errmsg": "登录失败，账号或密码错误"}')
+E            +    where &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt; = Assert.asert_contrast
+E            +    and   '{"errmsg": "&amp;case_001.errmsg&amp;"}' = handleExcelJson('{\n    "errmsg": "&amp;case_001.errmsg&amp;"\n}')
+E            +      where '{\n    "errmsg": "&amp;case_001.errmsg&amp;"\n}' = str('{\n    "errmsg": "&amp;case_001.errmsg&amp;"\n}')
+E            +    and   200 = &lt;Response [200]&gt;.status_code
+E            +    and   '{"code": 400, "errmsg": "登录失败，账号或密码错误"}' = dictToString({'code': 400, 'errmsg': '登录失败，账号或密码错误'})
+E            +      where {'code': 400, 'errmsg': '登录失败，账号或密码错误'} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;()
+E            +        where &lt;bound method Response.json of &lt;Response [200]&gt;&gt; = &lt;Response [200]&gt;.json
+
+test_case\test_demo.py:81: AssertionError</failure></testcase><testcase classname="test_case.test_demo.TestClass" name="test_1[data2]" time="0.755"><failure message="assert False&#10; +  where False = &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt;(data='{&quot;count&quot;: &quot;@select username from tb_users where id = 11@&quot;, &quot;errmsg&quot;: &quot;ok&quot;}', result_code=200, result_data='{&quot;code&quot;: 200, &quot;count&quot;: 1, &quot;errmsg&quot;: &quot;ok&quot;}')&#10; +    where &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt; = Assert.asert_contrast&#10; +    and   '{&quot;count&quot;: &quot;@select username from tb_users where id = 11@&quot;, &quot;errmsg&quot;: &quot;ok&quot;}' = handleExcelJson('{\n    &quot;count&quot;: &quot;@select username from tb_users where id = 11@&quot;,\n    &quot;errmsg&quot;: &quot;ok&quot;\n}')&#10; +      where '{\n    &quot;count&quot;: &quot;@select username from tb_users where id = 11@&quot;,\n    &quot;errmsg&quot;: &quot;ok&quot;\n}' = str('{\n    &quot;count&quot;: &quot;@select username from tb_users where id = 11@&quot;,\n    &quot;errmsg&quot;: &quot;ok&quot;\n}')&#10; +    and   200 = &lt;Response [200]&gt;.status_code&#10; +    and   '{&quot;code&quot;: 200, &quot;count&quot;: 1, &quot;errmsg&quot;: &quot;ok&quot;}' = dictToString({'code': 200, 'count': 1, 'errmsg': 'ok'})&#10; +      where {'code': 200, 'count': 1, 'errmsg': 'ok'} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;()&#10; +        where &lt;bound method Response.json of &lt;Response [200]&gt;&gt; = &lt;Response [200]&gt;.json">self = &lt;test_case.test_demo.TestClass object at 0x000001A85702A070&gt;
+data = ['case_003', '查询用户', '查询是否存在用户', 'GET', 'count', '{"username": "wrfwrf"}', ...]
+
+    @pytest.mark.smoke
+    @pytest.mark.parametrize("data", execute_data)
+    def test_1(self, data):
+        """编写测试用例"""
+        if data[3] == 'GET':
+            jsondict = getDict(data[5])
+            for key, value in jsondict.items():
+                if match_param(str(value)):
+                    a, b = match_param(str(value))
+                    jsondict[key] = str(extract_with_jsonpath(
+                        global_instance.res_save_dict[a], b))
+                if match_sql(value):
+                    c = match_sql(value)
+                    jsondict[key] = OperationDb().query(c)
+                json_str = json.dumps(jsondict)
+                data[5] = json_str
+            res = ApiRequest.send_requests(
+                method=data[3], url=data[4], params=data[5])
+            # print(res.status_code)
+            if data[7] == 'Y':
+                global_instance.res_save_dict[data[0]] = dictToString(
+                    res.json())
+&gt;           assert Assert.asert_contrast(
+                data=handleExcelJson(str(
+                    data[6])),
+                result_code=res.status_code,
+                result_data=dictToString(res.json()))
+E           assert False
+E            +  where False = &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt;(data='{"count": "@select username from tb_users where id = 11@", "errmsg": "ok"}', result_code=200, result_data='{"code": 200, "count": 1, "errmsg": "ok"}')
+E            +    where &lt;function Assert.asert_contrast at 0x000001A856FD5D30&gt; = Assert.asert_contrast
+E            +    and   '{"count": "@select username from tb_users where id = 11@", "errmsg": "ok"}' = handleExcelJson('{\n    "count": "@select username from tb_users where id = 11@",\n    "errmsg": "ok"\n}')
+E            +      where '{\n    "count": "@select username from tb_users where id = 11@",\n    "errmsg": "ok"\n}' = str('{\n    "count": "@select username from tb_users where id = 11@",\n    "errmsg": "ok"\n}')
+E            +    and   200 = &lt;Response [200]&gt;.status_code
+E            +    and   '{"code": 200, "count": 1, "errmsg": "ok"}' = dictToString({'code': 200, 'count': 1, 'errmsg': 'ok'})
+E            +      where {'code': 200, 'count': 1, 'errmsg': 'ok'} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;()
+E            +        where &lt;bound method Response.json of &lt;Response [200]&gt;&gt; = &lt;Response [200]&gt;.json
+
+test_case\test_demo.py:58: AssertionError</failure></testcase><testcase classname="test_case.test_demo.TestClass" name="test_1[data3]" time="0.328" /></testsuite></testsuites>

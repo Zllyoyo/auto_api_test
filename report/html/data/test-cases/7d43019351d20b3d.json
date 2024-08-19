@@ -1,0 +1,126 @@
+{
+  "uid" : "7d43019351d20b3d",
+  "name" : "test_1[data0]",
+  "fullName" : "test_case.test_demo.TestClass#test_1",
+  "historyId" : "f31b606fbfa8704f91eb71af5c5dc78e",
+  "time" : {
+    "start" : 1724058989013,
+    "stop" : 1724058989473,
+    "duration" : 460
+  },
+  "description" : "编写测试用例",
+  "descriptionHtml" : "<p>编写测试用例</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1724058988914,
+      "stop" : 1724058989011,
+      "duration" : 97
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_xunit_setup_class_fixture_TestClass",
+    "time" : {
+      "start" : 1724058989011,
+      "stop" : 1724058989011,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "description" : "编写测试用例",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "e250b56baf9cf40e",
+      "name" : "log",
+      "source" : "e250b56baf9cf40e.txt",
+      "type" : "text/plain",
+      "size" : 5372
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_class_fixture_TestClass::0",
+    "time" : {
+      "start" : 1724058991162,
+      "stop" : 1724058991162,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "smoke"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case"
+  }, {
+    "name" : "suite",
+    "value" : "test_demo"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestClass"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G38TPIG"
+  }, {
+    "name" : "thread",
+    "value" : "22040-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_demo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "data",
+    "value" : "['case_001', '注册', '注册用户', 'POST', 'register', '{\"username\": \"wrffff\", \"password\": \"wrf19980122\", \"password2\": \"wrf19980122\", \"mobile\": \"13368036672\", \"allow\": \"1\"}', '{\"code\": \"@select id from tb_users where username = \\'wrfwrf\\'@\",\\n\"errmsg\": \"用户名已存在\"}', 'Y']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "smoke" ]
+  },
+  "source" : "7d43019351d20b3d.json",
+  "parameterValues" : [ "['case_001', '注册', '注册用户', 'POST', 'register', '{\"username\": \"wrffff\", \"password\": \"wrf19980122\", \"password2\": \"wrf19980122\", \"mobile\": \"13368036672\", \"allow\": \"1\"}', '{\"code\": \"@select id from tb_users where username = \\'wrfwrf\\'@\",\\n\"errmsg\": \"用户名已存在\"}', 'Y']" ]
+}
